@@ -1,0 +1,11 @@
+{
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "tools/test.py",
+        "cmd": "docker cp ./tools/kafka_stream_handler.py hadoop-master:/root/"
+      }
+    ]
+  }
+}

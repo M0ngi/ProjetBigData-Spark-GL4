@@ -1,0 +1,63 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo
+    container_name: db_mongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: roottoor
+  
+  tcp_streamer:
+    build: ./tcp_streamer/
+    container_name: tcp_streamer
+    networks:
+      - hadoop
+    ports:
+      - 1337:1337
+  
+  kafka_streamer:
+    build: ./kafka_streamer/
+    container_name: kafka_streamer
+    networks:
+      - hadoop
+    restart: always
+    
+  hadoop-master:
+    build: ./master/
+    container_name: hadoop-master
+    hostname: hadoop-master
+    # tty: true
+    ports:
+      - 9870:9870
+      - 8088:8088
+      - 7077:7077
+      - 16010:16010
+    networks:
+      hadoop:
+
+  hadoop-worker1:
+    build: ./worker/
+    container_name: hadoop-worker1
+    hostname: hadoop-worker1
+    # tty: true
+    ports:
+      - 8040:8042
+    networks:
+      hadoop:
+
+  hadoop-worker2:
+    build: ./worker/
+    container_name: hadoop-worker2
+    hostname: hadoop-worker2
+    # tty: true
+    ports:
+      - 8041:8042
+    networks:
+      hadoop:
+
+networks:
+  hadoop:
+    driver: bridge
