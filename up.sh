@@ -1,6 +1,7 @@
 #!/bin/bash
 
-cp ./tools/kafka_stream_handler.py ./master/tools/
+cp ./tools/* ./master/tools/
+cp ./scripts/run-py-batch.sh ./master/tools/
 cp ./scripts/run-py-kafka.sh ./master/tools/
 
 docker network create \

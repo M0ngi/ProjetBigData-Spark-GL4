@@ -30,6 +30,7 @@ services:
         ipv4_address: 172.50.0.21
         aliases:
           - internal.db.tn
+
   tcp_streamer:
     build: ./tcp_streamer/
     container_name: tcp_streamer

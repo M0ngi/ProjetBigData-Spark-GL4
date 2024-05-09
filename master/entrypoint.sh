@@ -16,6 +16,9 @@ sleep 45
 sleep 10
 
 hdfs dfsadmin -safemode leave
+sleep 10
+
+/root/run-py-kafka.sh &
 
 echo "DONE"
 tail -f /dev/null
