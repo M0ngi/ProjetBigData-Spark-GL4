@@ -15,5 +15,7 @@ sleep 45
 /root/start-kafka-zookeeper.sh
 sleep 10
 
+hdfs dfsadmin -safemode leave
+
 echo "DONE"
 tail -f /dev/null

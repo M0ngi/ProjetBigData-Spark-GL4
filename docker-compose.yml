@@ -1,15 +1,35 @@
 version: '3'
 services:
+  grafana:
+    build: ./grafana/
+    container_name: grafana
+    ports:
+      - 3000:3000
+      - 3333:3333
+    environment:
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=grafana-mongodb-datasource
+      - GF_SECURITY_ADMIN_USER=admin
+    networks:
+      - hadoop
+    volumes:
+      - './grafana/data:/var/lib/grafana'
+
   mongodb:
     image: mongo
     container_name: db_mongo
     restart: always
     ports:
       - 27017:27017
+    volumes:
+      - './mongo_data:/data/db'
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: roottoor
-  
+    networks:
+      hadoop:
+        ipv4_address: 172.50.0.21
+        aliases:
+          - internal.db.tn
   tcp_streamer:
     build: ./tcp_streamer/
     container_name: tcp_streamer
@@ -24,7 +44,7 @@ services:
     networks:
       - hadoop
     restart: always
-    
+
   hadoop-master:
     build: ./master/
     container_name: hadoop-master
@@ -60,4 +80,4 @@ services:
 
 networks:
   hadoop:
-    driver: bridge
+    external: true

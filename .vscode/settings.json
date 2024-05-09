@@ -3,8 +3,12 @@
   "emeraldwalk.runonsave": {
     "commands": [
       {
-        "match": "tools/test.py",
+        "match": "tools/kafka_stream_handler.py",
         "cmd": "docker cp ./tools/kafka_stream_handler.py hadoop-master:/root/"
+      },
+      {
+        "match": "tools/batch_handler.py",
+        "cmd": "docker cp ./tools/batch_handler.py hadoop-master:/root/"
       }
     ]
   }
