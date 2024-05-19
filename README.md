@@ -9,6 +9,12 @@ This project consists of:
 * A spark batch processing pipeline, taking a csv file & transforming the data in it, writing to HDFS & to MongoDB.
 * A grafana service, reading data from MongoDB & displaying multiple graphs. Some of the graphs are real-time data.
 
+## Architecture
+
+<p align="center">
+    <img src="https://i.imgur.com/eSxN5PZ.png" />
+</p>
+
 ## Tools & Stack used
 
 * Python (Streaming services, Spark streaming & batch processing)
