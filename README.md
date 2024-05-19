@@ -16,4 +16,5 @@ This project consists of:
 * MongoDB
 * Hadoop FS
 * Spark
-* Kafka 
+* Kafka
+* Docker & Docker compose
