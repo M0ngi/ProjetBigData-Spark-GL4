@@ -18,3 +18,13 @@ This project consists of:
 * Spark
 * Kafka
 * Docker & Docker compose
+
+## Starting
+
+To run everything, use [up.sh](/up.sh) To reset/shutdown, use [reset.sh](/reset.sh)
+
+## Tools & scripts
+
+* Spark applications are inside [tools](/tools) folder.
+* To get a shell on Hadoop containers, you can find bash scripts to do so quickly in [sh](/sh) folder.
+* Last, other helper bash scripts can be found inside [scripts](/scripts) folder.
