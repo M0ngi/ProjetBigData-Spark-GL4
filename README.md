@@ -15,6 +15,12 @@ This project consists of:
     <img src="https://i.imgur.com/eSxN5PZ.png" />
 </p>
 
+## Spark pipelines
+
+<p align="center">
+    <img src="https://i.imgur.com/VDsngO3.png" />
+</p>
+
 ## Tools & Stack used
 
 * Python (Streaming services, Spark streaming & batch processing)
