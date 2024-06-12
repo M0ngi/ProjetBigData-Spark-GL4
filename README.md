@@ -1,5 +1,11 @@
 # Big Data Project For University Year GL4 - INSAT
 
+Group:
+
+- Salma Seddik
+- Naima Attia
+- Med Mongi Saidane
+
 ## Description
 
 This project consists of:
